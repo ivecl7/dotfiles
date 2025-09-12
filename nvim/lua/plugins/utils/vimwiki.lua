@@ -1,20 +1,24 @@
 return {
 	"ivecl7/vimwiki",
-  -- The event that triggers the plugin
-  event = "BufEnter *.md",
-  -- The keys that trigger the plugin
-  keys = { "<leader>ww", "<leader>wt" },
-  -- The configuration for the plugin
-  init = function()
-    vim.g.vimwiki_auto_header = 1
-    vim.g.vimwiki_list = {
-      {
-        -- Here will be the path for your wiki
-        path = "~/.data/",
-        -- The syntax for the wiki
-        -- syntax = "markdown",
-        ext = "md",
-      },
-    }
-  end,
+	-- The event that triggers the plugin
+	event = "BufEnter *.md",
+	-- The keys that trigger the plugin
+	keys = {
+		"<leader>ww",
+		"<leader>wt",
+		{ "r", "<cmd>Vimwiki2HTMLBrowse<cr>", "n", { desc = "Show vimwiki in browser" } },
+	},
+	-- The configuration for the plugin
+	init = function()
+		vim.g.vimwiki_auto_header = 1
+		vim.g.vimwiki_list = {
+			{
+				-- Here will be the path for your wiki
+				path = "~/.data/",
+				-- The syntax for the wiki
+				-- syntax = "markdown",
+				ext = "md",
+			},
+		}
+	end,
 }
