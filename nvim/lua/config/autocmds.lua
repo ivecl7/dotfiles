@@ -1,7 +1,8 @@
-local a = vim.api
+local ag = vim.api.nvim_create_augroup
+local ac = vim.api.nvim_create_autocmd
 
-a.nvim_create_augroup("restore_cursor", { clear = true })
-a.nvim_create_autocmd({ "BufReadPost" }, {
+ag("restore_cursor", { clear = true })
+ac({ "BufReadPost" }, {
 	group = "restore_cursor",
 	pattern = "*",
 	callback = function()
