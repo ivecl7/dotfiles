@@ -35,14 +35,6 @@ return {
 				desc = "Command History",
 			},
 			{
-				"<leader>b",
-				function()
-					require("telescope.builtin").buffers()
-				end,
-				"n",
-				desc = "+buffer",
-			},
-			{
 				"<leader>ff",
 				function()
 					require("telescope.builtin").find_files()
