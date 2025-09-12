@@ -1,0 +1,106 @@
+vim.g.mapleader = " "
+local k = vim.keymap
+
+k.set({ "n", "x" }, "j", [[v:count == 0? 'gj': 'j']], { expr = true, silent = true })
+k.set({ "n", "x" }, "<Down>", [[v:count == 0 ? 'gj' : 'j']], { expr = true, silent = true })
+k.set({ "n", "x" }, "k", [[v:count == 0 ? 'gk' : 'k']], { expr = true, silent = true })
+k.set({ "n", "x" }, "<Up>", [[v:count == 0 ? 'gk' : 'k']], { expr = true, silent = true })
+k.set("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
+k.set("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
+k.set("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
+k.set("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
+k.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
+k.set("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
+k.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
+k.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
+k.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
+k.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
+k.set("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
+k.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+k.set("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
+k.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
+k.set("i", ",", ",<c-g>u")
+k.set("i", ".", ".<c-g>u")
+k.set("i", ",", ",<c-g>u")
+k.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
+k.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
+k.set(
+	"n",
+	"<leader>ur",
+	"<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
+	{ desc = "Redraw / Clear hlsearch / Diff Update" }
+)
+k.set("n", "n", [['Nn'\[v:searchforward\].'zv']], { expr = true, desc = "Next Search Result" })
+k.set(
+	"x",
+	"n",
+	[[
+    'Nn'[v:searchforward"]
+  ]],
+	{ expr = true, desc = "Next Search Result" }
+)
+k.set(
+	"o",
+	"n",
+	[[
+    'Nn'[v:searchforward"]
+  ]],
+	{ expr = true, desc = "Next Search Result" }
+)
+k.set(
+	"n",
+	"N",
+	[[
+    'nN'[v:searchforward].'zv'
+  ]],
+	{ expr = true, desc = "Prev Search Result" }
+)
+k.set(
+	"x",
+	"N",
+	[[
+    'nN'[v:searchforward"]
+  ]],
+	{ expr = true, desc = "Prev Search Result" }
+)
+k.set(
+	"o",
+	"N",
+	[[
+    'nN'[v:searchforward"]
+  ]],
+	{ expr = true, desc = "Prev Search Result" }
+)
+k.set("n", "<leader>cd", "vim.diagnostic.open_float", { desc = "Line Diagnostics" })
+k.set("n", "]d", "diagnostic_goto(true)", { desc = "Next Diagnostic" })
+k.set("n", "[d", "diagnostic_goto(false)", { desc = "Prev Diagnostic" })
+k.set("n", "]e", "diagnostic_goto(true 'ERROR')", { desc = "Next Error" })
+k.set("n", "[e", "diagnostic_goto(false 'ERROR')", { desc = "Prev Error" })
+k.set("n", "]w", "diagnostic_goto(true 'WARN')", { desc = "Next Warning" })
+k.set("n", "[w", "diagnostic_goto(false 'WARN')", { desc = "Prev Warning" })
+k.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
+k.set("n", "<leader>ui", "vim.show_pos", { desc = "Inspect Pos" })
+k.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
+k.set("t", "<C-h>", "<cmd>wincmd h<cr>", { desc = "Go to Left Window" })
+k.set("t", "<C-j>", "<cmd>wincmd j<cr>", { desc = "Go to Lower Window" })
+k.set("t", "<C-k>", "<cmd>wincmd k<cr>", { desc = "Go to Upper Window" })
+k.set("t", "<C-l>", "<cmd>wincmd l<cr>", { desc = "Go to Right Window" })
+k.set("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+k.set("n", "<leader>ww", "<C-W>p", { desc = "Other Window", remap = true })
+k.set("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
+k.set("n", "<leader>w-", "<C-W>s", { desc = "Split Window Below", remap = true })
+k.set("n", "<leader>w|", "<C-W>v", { desc = "Split Window Right", remap = true })
+k.set("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
+k.set("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap = true })
+k.set("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })
+k.set("n", "<leader><tab>f", "<cmd>tabfirst<cr>", { desc = "First Tab" })
+k.set("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
+k.set("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
+k.set("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
+k.set("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
+k.set("v", "<leader>y", [[ "+y ]], { desc = "Copy to clipboard" })
+k.set("n", "<leader>p", ":bp<CR>", { desc = "Prev buffer" })
+k.set("n", "<leader>n", ":bn<CR>", { desc = "Next buffer" })
+k.set("n", "dm<Space>", ":delm!<CR>", { desc = "Delete all marks", silent = true })
+k.set("n", "<leader>a", "<Esc>/\\v[-+]?(\\d+)<CR>:nohlsearch<CR>", { desc = "Find next number", silent = true })
+k.set("n", "<leader>A", "<Esc>?\\v[-+]\\?(\\d+)<CR>:nohlsearch<CR>", { desc = "Find prev number", silent = true })
