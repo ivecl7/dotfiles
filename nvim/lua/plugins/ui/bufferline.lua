@@ -1,16 +1,16 @@
 return {
 	"akinsho/bufferline.nvim",
+	lazy = false,
+	priority = 1000,
 	version = "*",
 	dependencies = "nvim-tree/nvim-web-devicons",
 	opts = {
-		{
+		options = {
 			diagnostics = "nvim_lsp",
-			"buffers",
-
+			mode = "buffers",
 			close_icon = " ",
 			buffer_close_icon = "󰱝 ",
 			modified_icon = "󰔯 ",
-
 			offsets = {
 				{
 					filetype = "neo-tree",
