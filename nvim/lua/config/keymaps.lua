@@ -30,47 +30,6 @@ k.set(
 	"<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
 	{ desc = "Redraw / Clear hlsearch / Diff Update" }
 )
-k.set("n", "n", [['Nn'\[v:searchforward\].'zv']], { expr = true, desc = "Next Search Result" })
-k.set(
-	"x",
-	"n",
-	[[
-    'Nn'[v:searchforward"]
-  ]],
-	{ expr = true, desc = "Next Search Result" }
-)
-k.set(
-	"o",
-	"n",
-	[[
-    'Nn'[v:searchforward"]
-  ]],
-	{ expr = true, desc = "Next Search Result" }
-)
-k.set(
-	"n",
-	"N",
-	[[
-    'nN'[v:searchforward].'zv'
-  ]],
-	{ expr = true, desc = "Prev Search Result" }
-)
-k.set(
-	"x",
-	"N",
-	[[
-    'nN'[v:searchforward"]
-  ]],
-	{ expr = true, desc = "Prev Search Result" }
-)
-k.set(
-	"o",
-	"N",
-	[[
-    'nN'[v:searchforward"]
-  ]],
-	{ expr = true, desc = "Prev Search Result" }
-)
 k.set("n", "<leader>cd", "vim.diagnostic.open_float", { desc = "Line Diagnostics" })
 k.set("n", "]d", "diagnostic_goto(true)", { desc = "Next Diagnostic" })
 k.set("n", "[d", "diagnostic_goto(false)", { desc = "Prev Diagnostic" })
