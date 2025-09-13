@@ -1,5 +1,6 @@
 return {
 	"ivecl7/vimwiki",
+	lazy = false,
 	-- The event that triggers the plugin
 	event = "BufEnter *.md",
 	-- The keys that trigger the plugin
