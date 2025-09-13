@@ -37,7 +37,7 @@ return {
 				"isort",
 			},
 			lua = { "stylua" },
-			nix = { "nixfmt-rfc-style" },
+			nix = { "nixfmt" },
 			markdown = {
 				"prettierd",
 				"prettier",
@@ -49,7 +49,6 @@ return {
 				stop_after_first = true,
 			},
 			terraform = { "terraform_fmt" },
-			bicep = { "bicep" },
 			sh = {
 				"shellcheck",
 				"shellharden",

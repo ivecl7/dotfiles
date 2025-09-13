@@ -7,6 +7,7 @@ return {
 	{ "nvim-mini/mini.cursorword", lazy = false, opts = { delay = 100 } },
 	{ "nvim-mini/mini.bracketed", opts = {} },
 	{ "nvim-mini/mini.ai", opts = {} },
+	{ "nvim-mini/mini.icons", opts = {} },
 	{
 		"nvim-mini/mini.diff",
 		lazy = false,
