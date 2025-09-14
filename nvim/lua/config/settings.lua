@@ -79,3 +79,24 @@ o.cmdheight = 0
 o.fillchars = {
 	eob = " ",
 }
+
+o.wrap = true
+
+o.sms = true
+
+o.textwidth = 80
+
+o.list = true
+
+o.lcs = {
+	tab = "  ",
+	trail = "-",
+	nbsp = "‿",
+}
+
+o.wiw = 50
+o.wmw = 50
+o.foldmethod = "expr"
+o.foldexpr = "nvim_treesitter#foldexpr()"
+
+o.fileencodings = { "utf-8", "euc-cn" }
