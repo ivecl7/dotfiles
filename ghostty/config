@@ -85,9 +85,13 @@ font-feature = halt
 #
 # Changing this configuration at runtime will only affect new terminals,
 # i.e. new windows, tabs, etc.
-font-codepoint-map = U+3300-U+4DBF=ChillHuoFangKai_F_Regular
-font-codepoint-map = U+FF00-U+FFEF=SourceHanSerifSC-VF
-font-codepoint-map = U+20000-U+2FA1F=TW-Kai-Ext-B-98_1
+ font-codepoint-map = U+3300-U+4DBF=ChillHuoFangKai_F_Regular
+# font-codepoint-map = U+3300-U+4DBF=LXGWWenKaiMono
+# font-codepoint-map = U+FF00-U+FFEF=LXGWWenKaiMono
+ font-codepoint-map = U+20000-U+2FA1F=TW-Kai
+# font-codepoint-map = U+20000-U+2FA1F=LXGWWenKaiMono
+# font-codepoint-map = "U+4E00-U+9FFF,U+3400-U+4DBF = LXGW WenKai"
+ font-codepoint-map = U+FF00-U+FFEF=Noto Font
 
 # Distance in pixels or percentage adjustment from the bottom of the cell to the text baseline.
 # Increase to move baseline UP, decrease to move baseline DOWN.
@@ -496,7 +500,6 @@ keybind = ctrl+equal=increase_font_size:1
 keybind = ctrl+shift+o=new_split:right
 keybind = ctrl+shift+c=copy_to_clipboard
 keybind = ctrl+shift+q=quit
-keybind = ctrl+shift+n=new_window
 keybind = ctrl+shift+page_down=jump_to_prompt:1
 keybind = ctrl+shift+comma=reload_config
 keybind = ctrl+minus=decrease_font_size:1
