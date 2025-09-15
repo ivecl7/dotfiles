@@ -27,6 +27,9 @@ return {
 				"prettier",
 				stop_after_first = true,
 			},
+			kdl = {
+				"prettier",
+			},
 			typescript = {
 				"prettierd",
 				"prettier",
@@ -60,6 +63,7 @@ return {
 				"shfmt",
 			},
 			json = { "jq" },
+			jsonc = { "prettier" },
 			rust = { "rustfmt" },
 			_ = { "trim_whitespace" },
 		},

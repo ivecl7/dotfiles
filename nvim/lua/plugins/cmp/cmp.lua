@@ -39,23 +39,23 @@ return {
 		local cmp = require("cmp")
 		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 		cmp.setup({
+			preselect = cmp.PreselectMode.Item,
 			mapping = cmp.mapping.preset.insert({
 				-- Navigate between completion items
 				["<C-j>"] = cmp.mapping.select_next_item(),
 				["<C-k>"] = cmp.mapping.select_prev_item(),
-
-				-- `Enter` key to confirm completion
-				["<CR>"] = cmp.mapping.confirm({ select = false }),
-				["<S-CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
-
-				-- Ctrl+Space to trigger completion menu
-				["<C-Space>"] = cmp.mapping.complete(),
+				["<C-e>"] = cmp.mapping.abort(),
 
 				-- Scroll up and down in the completion documentation
 				["<C-u>"] = cmp.mapping.scroll_docs(-4),
 				["<C-d>"] = cmp.mapping.scroll_docs(4),
 
+				-- Ctrl+Space to trigger completion menu
+				["<C-Space>"] = cmp.mapping.complete(),
 				["<C-Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
+
+				["<C-CR>"] = cmp.mapping.confirm({ select = true }),
+				["<S-CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
 			}),
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
@@ -86,7 +86,7 @@ return {
 						keyword_length = 3,
 					},
 				},
-				{ name = "copilot" },
+				{ name = "copilot", group_index = 1, priority = 100 },
 				{
 					name = "path",
 					option = {

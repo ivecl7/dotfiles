@@ -31,6 +31,19 @@ return {
 					icon = "",
 				},
 				{
+					"filetype",
+					icon_only = true,
+					separator = "",
+					padding = {
+						left = 1,
+						right = 0,
+					},
+				},
+				{
+					"filename",
+					path = 1,
+				},
+				{
 					"diff",
 					symbols = {
 						added = " ",
@@ -56,17 +69,19 @@ return {
 			},
 			lualine_x = {
 				{
-					"filetype",
-					icon_only = true,
-					separator = "",
-					padding = {
-						left = 1,
-						right = 0,
-					},
-				},
-				{
-					"filename",
-					path = 1,
+					function()
+						local cmd = [[
+              echo -e "status\nquit" | nc 127.0.0.1 23333 2>/dev/null | grep 'lyric-s:' | sed 's/^.\{12\}//'
+            ]]
+						-- 使用 io.popen 执行命令并读取结果
+						local handle = io.popen(cmd)
+						local lyric = handle:read("*a") -- 读取全部输出
+						handle:close() -- 关闭进程
+						-- 清理结果（移除末尾换行符和空格）
+						lyric = lyric:gsub("%s+$", "")
+						-- 如果无结果，返回提示信息
+						return lyric ~= "" and lyric or "No lyric"
+					end,
 				},
 				{
 					function()
