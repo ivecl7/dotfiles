@@ -71,7 +71,7 @@ return {
 				{
 					function()
 						local cmd = [[
-              echo -e "status\nquit" | nc 127.0.0.1 23333 2>/dev/null | grep 'lyric-s:' | sed 's/^.\{12\}//'
+              echo -e "status\nquit" | nc 127.0.0.1 23333 2>/dev/null | rg -oP 'lyric-s:  \K.*'
             ]]
 						-- 使用 io.popen 执行命令并读取结果
 						local handle = io.popen(cmd)
