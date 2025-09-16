@@ -49,3 +49,4 @@ eval "$(zoxide init bash --cmd cd --hook pwd)"
 alias cat='bat --paging=never --theme="Catppuccin Mocha"'
 alias df='duf'
 alias du='dua i'
+alias grep='rg'
