@@ -18,17 +18,13 @@ def main():
     process = None  # 初始化进程变量
     try:
         while True:
-            # 生成日期目录（格式 YYYYMMDD）并确保其存在
-            current_date = datetime.datetime.now().strftime("%Y%m%d")
-            date_dir = os.path.join(custom_dir, current_date)
-            os.makedirs(date_dir, exist_ok=True)
-            log_path = os.path.join(date_dir, "log.txt")
+            log_path = os.path.join(custom_dir, "log.txt")
             with open(log_path, "a") as f, redirect_stdout(f):
-                print(f"当前日期同步目录已准备: {date_dir}")
+                print(f"当前日期同步目录已准备: {custom_dir}")
                 bashrc_path = os.path.join(home_dir, ".bashrc")
                 py_path = os.path.join(home_dir, ".records/start.py")
 
-                cmd = ["rsync", "-av", bashrc_path, py_path, date_dir]
+                cmd = ["rsync", "-av", bashrc_path, py_path, custom_dir]
 
                 process = subprocess.Popen(cmd)
 
