@@ -46,7 +46,7 @@ o.foldmethod = "manual"
 o.foldenable = false
 
 -- Wrap long lines at a character in 'breakat'
-o.linebreak = true
+o.linebreak = false
 
 -- Disable spell checking
 o.spell = false

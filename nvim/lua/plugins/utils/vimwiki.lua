@@ -32,5 +32,8 @@ return {
 				ext = "md",
 			},
 		}
+		vim.g.vimwiki_key_mappings = {
+			table_format = 0,
+		}
 	end,
 }
