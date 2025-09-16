@@ -80,11 +80,16 @@ o.fillchars = {
 	eob = " ",
 }
 
-o.wrap = true
+o.wrap = false
 
 o.sms = true
 
-o.textwidth = 80
+o.breakat = [[ 	!;:,.?]]
+o.whichwrap = "h,l,<,>,[,],~"
+o.columns = 200
+o.textwidth = 100
+o.breakindentopt = "min:80,shift:-99,list:-1"
+o.formatoptions = "jcroqlntw"
 
 o.list = true
 
