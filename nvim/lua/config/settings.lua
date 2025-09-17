@@ -84,7 +84,8 @@ o.wrap = false
 
 o.sms = true
 
-o.breakat = [[ 	!;:,.?]]
+o.formatoptions:append("m")
+o.breakat = [[ 	!@*-+;:,./?。，、：]]
 o.whichwrap = "h,l,<,>,[,],~"
 o.columns = 200
 o.textwidth = 100
