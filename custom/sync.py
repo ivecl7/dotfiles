@@ -22,9 +22,17 @@ def main():
             with open(log_path, "a") as f, redirect_stdout(f):
                 print(f"当前日期同步目录已准备: {custom_dir}")
                 bashrc_path = os.path.join(home_dir, ".bashrc")
-                py_path = os.path.join(home_dir, ".records/start.py")
+                records_py_path = os.path.join(home_dir, ".records/start.py")
+                wallpaper_py_path = os.path.join(home_dir, ".wallpaper/wallpaper.py")
 
-                cmd = ["rsync", "-av", bashrc_path, py_path, custom_dir]
+                cmd = [
+                    "rsync",
+                    "-av",
+                    bashrc_path,
+                    records_py_path,
+                    wallpaper_py_path,
+                    custom_dir,
+                ]
 
                 process = subprocess.Popen(cmd)
 
