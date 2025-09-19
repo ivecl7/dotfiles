@@ -1,5 +1,6 @@
 #!/home/rthetapi/.venv/bin/python
 import os
+import random
 import subprocess
 import sys
 import time
@@ -109,7 +110,9 @@ def main():
             time.sleep(10 * 60)  # 10分钟
 
             # 更新索引（循环）
-            current_index = (current_index + 1) % len(video_files)
+            current_index = (current_index + random.randint(1, len(video_files))) % len(
+                video_files
+            )
 
     except KeyboardInterrupt:
         print("\n程序被用户中断")
