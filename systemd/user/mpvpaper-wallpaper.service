@@ -1,0 +1,15 @@
+[Unit]
+Description=mpvpaper Wallpaper Service
+After=graphical-session.target
+
+[Service]
+Type=simple
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/mpvpaper -o "no-audio --loop --panscan=1.0" ALL %h/.wallpaper/current
+ExecStop=/usr/bin/killall mpvpaper
+MemoryMax=2G
+Restart=always
+RestartSec=3s
+
+[Install]
+WantedBy=default.target

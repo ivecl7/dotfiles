@@ -1,0 +1,11 @@
+[Unit]
+Description=Restart mpvpaper every 30 minutes
+
+[Timer]
+OnBootSec=3s
+OnUnitActiveSec=30min
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+
