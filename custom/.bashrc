@@ -1,3 +1,5 @@
+# by adding this line at the top of ~/.bashrc:
+[[ $- == *i* ]] && source /usr/share/blesh/ble.sh --noattach
 # /etc/skel/.bashrc
 #
 # This file is sourced by all *interactive* bash shells on startup,
@@ -50,3 +52,7 @@ alias cat='bat --paging=never --theme="Catppuccin Mocha"'
 alias df='duf'
 alias du='dua i'
 alias grep='rg'
+
+set -o vi
+# and add this line at the end of ~/.bashrc:
+[[ ${BLE_VERSION-} ]] && ble-attach
