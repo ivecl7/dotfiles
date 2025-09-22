@@ -24,6 +24,10 @@ def main():
                 bashrc_path = os.path.join(home_dir, ".bashrc")
                 records_py_path = os.path.join(home_dir, ".records/start.py")
                 wallpaper_py_path = os.path.join(home_dir, ".wallpaper/wallpaper.py")
+                scripts_path = os.path.join(home_dir, ".scripts")
+                scripts_files = [
+                    os.path.join(scripts_path, f) for f in os.listdir(scripts_path)
+                ]
 
                 cmd = [
                     "rsync",
@@ -31,6 +35,7 @@ def main():
                     bashrc_path,
                     records_py_path,
                     wallpaper_py_path,
+                    *scripts_files,
                     custom_dir,
                 ]
 
